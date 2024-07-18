@@ -5,5 +5,7 @@ html{
 .Header-app{
     display: flex;
     flex-direction: column;
-    
+}
+.Header-app h1{
+    font-size: 5rem;
 }
