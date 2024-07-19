@@ -60,7 +60,6 @@ input{
     padding-right: 7rem;
 }
 .container{
-    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     width: 120rem;
