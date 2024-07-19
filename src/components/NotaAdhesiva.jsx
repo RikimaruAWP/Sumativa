@@ -17,7 +17,9 @@ export function NotaAdhesiva() {
         const text = textRef.current.value.trim();
         const importan = ImportanteRef.current.checked;
 
-        if (title === '' || text === '') return;
+        if (text === ''){
+            alert('La descripcion esta vacia')
+            return;} 
 
         const newNote = { id: uuid(), title:title, text:text, importan:importan };
         setNotes([...notes, newNote]);
