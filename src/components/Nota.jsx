@@ -10,7 +10,7 @@ export function Nota({notaa, removeNote}) {
                 <span aria-hidden="true">X</span>
             </button>
             <strong>{title}</strong>
-            <div>
+            <div className="PostIt">
                 {text}
             </div>
         </div>
@@ -23,7 +23,7 @@ export function Nota({notaa, removeNote}) {
             <span aria-hidden="true">X</span>
         </button>
         <strong>{title}</strong>
-        <div>
+        <div className="PostIt">
             {text}
         </div>
     </div>

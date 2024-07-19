@@ -7,24 +7,27 @@ html{
     flex-direction: column;
 }
 .Header-app h1{
+    margin-bottom: 1.5rem;
     font-size: 5rem;
 }
 
 .Amarillo{
+    font-family: "Hachi Maru Pop", cursive;
     background-color:#FFFFCC;
-    width: 280px;
-    height: 200px;
-    margin-left: 15px;
-    margin-top: 20px;
+    width: 28rem;
+    height: 20rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
     transform: rotate(-3deg);
 }
 
 .Rojo{
+    font-family: "Hachi Maru Pop", cursive;
     background-color:#EC7063;
-    width: 280px;
-    height: 200px;
-    margin-left: 15px;
-    margin-top: 20px;
+    width: 28rem;
+    height: 20rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
     transform: rotate(3deg);
 }
 
@@ -40,18 +43,44 @@ input{
 }
 
 .TituloPost{
+    align-items: center;
     padding-right: 14rem;
-    margin-right: 3rem;
+    margin: 2.3rem;
 }
 
 .DescripcionPost{
     padding-right: 50rem;
-    margin-right: 3rem;
+    margin: 2.3rem;
 }
 .btnss{
     border-radius: 0.4rem ;
     font-size: 1.5rem;
     margin-left: 8rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+}
+.container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 120rem;
+    margin-top: 2rem;
+}
+
+.PostIt{
+    font-size: 2.5rem;
+}
+
+strong{
+    font: 1em sans-serif;
+    font-size: 1.5rem;
+}
+
+.m-2{
+    color: white;
+    font-size: 1.9rem;
+}
+.app{
+    display: flex;
+    align-items: center;
 }

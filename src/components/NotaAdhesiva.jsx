@@ -8,9 +8,9 @@ export function NotaAdhesiva() {
     const textRef = useRef();
     const ImportanteRef = useRef();
     const [notes, setNotes] = useState([{ id: uuid(), title:'hola', text:'Hola', importan:false },
+        { id: uuid(), title:'hola', text:'prueba', importan:true },
         { id: uuid(), title:'hola', text:'Hola', importan:false },
-        { id: uuid(), title:'hola', text:'Hola', importan:false },
-        { id: uuid(), title:'hola', text:'Hola', importan:false }]);
+        { id: uuid(), title:'hola', text:'TEsss', importan:true }]);
 
     function addNote() {
         const title = titleRef.current.value.trim();
@@ -37,14 +37,14 @@ export function NotaAdhesiva() {
             <div className="titulo">
                 <h1>Post It Simulator!</h1>
             </div>
-            <div className="">
+            <div className="app">
                 <input ref={titleRef} placeholder="Titulo" className="TituloPost" type="text" />
                 <input ref={textRef} placeholder="Descripcion" className="DescripcionPost" type="text" />
                 <input ref={ImportanteRef} type="checkbox" className="m-2" id="checkbox" />
                 <label className="m-2">Importante!</label>
                 <button className="btnss" onClick={addNote}> AGREGAR</button>
             </div>
-            <div>
+            <div className="container" >
                 {notes.map(note =>  <Nota key={note.id} notaa={note} removeNote={removeNote} />)}
             </div>
         </header>
