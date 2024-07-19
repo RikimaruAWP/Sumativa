@@ -1,32 +1,30 @@
-export function Nota({song, setFavorite}) {
-    const { id, url, favorite } = song; /** {id: uuid, url:"asdadasdas", favorite:true} */
+export function Nota({notaa, removeNote}) {
+    const {id ,title ,text, importan } = notaa; /** {id: uuid, url:"asdadasdas", favorite:true} */
 
-    const newFavorite = () => setFavorite(id);
-
-    const urlSong = "https://open.spotify.com/embed/album/" + url
-
-    if (favorite) {
+    const deleteNote = () => removeNote(id);
+    
+    if (importan) {
         return (
-            <div className="alert Rojo " key={note.id}>
-            <button type="button" className="close" onClick={() => removeNote(note.id)} aria-label="Cerrar">
+            <div className="alert Rojo " >
+            <button type="button" className="close" onClick={deleteNote} aria-label="Cerrar">
                 <span aria-hidden="true">X</span>
             </button>
-            <strong>{note.title}</strong>
+            <strong>{title}</strong>
             <div>
-                {note.text}
+                {text}
             </div>
         </div>
         )
     }
 
     return (
-        <div className="alert Amarillo" key={note.id}>
-        <button type="button" className="close" onClick={() => removeNote(note.id)} aria-label="Cerrar">
+        <div className="alert Amarillo" >
+        <button type="button" className="close" onClick={deleteNote} aria-label="Cerrar">
             <span aria-hidden="true">X</span>
         </button>
-        <strong>{note.title}</strong>
+        <strong>{title}</strong>
         <div>
-            {note.text}
+            {text}
         </div>
     </div>
     )

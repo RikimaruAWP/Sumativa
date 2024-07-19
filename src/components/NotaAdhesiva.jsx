@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
 import { v4 as uuid } from 'uuid';
+import { Nota } from "./Nota";
 
 
 export function NotaAdhesiva() {
     const titleRef = useRef();
     const textRef = useRef();
     const ImportanteRef = useRef();
-    const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState([{ id: uuid(), title:'hola', text:'Hola', importan:false },
+        { id: uuid(), title:'hola', text:'Hola', importan:false },
+        { id: uuid(), title:'hola', text:'Hola', importan:false },
+        { id: uuid(), title:'hola', text:'Hola', importan:false }]);
 
     function addNote() {
         const title = titleRef.current.value.trim();
@@ -15,7 +19,7 @@ export function NotaAdhesiva() {
 
         if (title === '' || text === '') return;
 
-        const newNote = { id: uuid(), title, text , importan };
+        const newNote = { id: uuid(), title:title, text:text, importan:importan };
         setNotes([...notes, newNote]);
         textRef.current.value = '';
         titleRef.current.value = '';
@@ -38,20 +42,10 @@ export function NotaAdhesiva() {
                 <input ref={textRef} placeholder="Descripcion" className="DescripcionPost" type="text" />
                 <input ref={ImportanteRef} type="checkbox" className="m-2" id="checkbox" />
                 <label className="m-2">Importante!</label>
-                <button className="btn btn-success m-2" onClick={addNote}> AGREGAR</button>
+                <button className="btnss" onClick={addNote}> AGREGAR</button>
             </div>
             <div>
-                {notes.map(note => (
-                    <div className="alert alert-warning" key={note.id}>
-                        <button type="button" className="close" onClick={() => removeNote(note.id)} aria-label="Cerrar">
-                            <span aria-hidden="true">X</span>
-                        </button>
-                        <strong>{note.title}</strong>
-                        <div>
-                            {note.text}
-                        </div>
-                    </div>
-                ))}
+                {notes.map(note =>  <Nota key={note.id} notaa={note} removeNote={removeNote} />)}
             </div>
         </header>
     </div>
