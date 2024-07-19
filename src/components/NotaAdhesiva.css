@@ -9,3 +9,10 @@ html{
 .Header-app h1{
     font-size: 5rem;
 }
+
+.Amarillo{
+    background-color: #FFFFCC;;
+}
+.Rojo{
+    background-color: #EC7063;
+}

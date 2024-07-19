@@ -1,22 +1,33 @@
-import './Nota.css';
+export function Nota({song, setFavorite}) {
+    const { id, url, favorite } = song; /** {id: uuid, url:"asdadasdas", favorite:true} */
 
+    const newFavorite = () => setFavorite(id);
 
-export function Nota(){
+    const urlSong = "https://open.spotify.com/embed/album/" + url
 
-    return(
-        <div className='app'>
-            <header className="Header-app">
-                <div className="titulo">
-                    <h1>Post It Simulator!</h1>
-                </div>
-                <div className="">
-                    <input placeholder="Titulo" className="TituloPost" type="text" />
-                    <input placeholder="Descripcion" className="DescripcionPost" type="text" />
-                    <input type="checkbox" className="m-2" id="checkbox" />
-                    <label className="m-2">Importante!</label>
-                    <button className="btn btn-success m-2">AGREGAR</button>
-                </div>
-            </header>
+    if (favorite) {
+        return (
+            <div className="alert Rojo " key={note.id}>
+            <button type="button" className="close" onClick={() => removeNote(note.id)} aria-label="Cerrar">
+                <span aria-hidden="true">X</span>
+            </button>
+            <strong>{note.title}</strong>
+            <div>
+                {note.text}
+            </div>
         </div>
+        )
+    }
+
+    return (
+        <div className="alert Amarillo" key={note.id}>
+        <button type="button" className="close" onClick={() => removeNote(note.id)} aria-label="Cerrar">
+            <span aria-hidden="true">X</span>
+        </button>
+        <strong>{note.title}</strong>
+        <div>
+            {note.text}
+        </div>
+    </div>
     )
 }

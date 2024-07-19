@@ -1,6 +1,5 @@
-import { Nota } from "./components/Nota"
-
+import { NotaAdhesiva } from "./components/NotaAdhesiva"
 function App (){
-    return <Nota/>
+    return <NotaAdhesiva/>
 }
 export {App}
